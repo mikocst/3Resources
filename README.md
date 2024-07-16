@@ -1,47 +1,26 @@
-# Astro Starter Kit: Minimal
+# THREE JS RESOURCE LIST
 
-```sh
-npm create astro@latest -- --template minimal
-```
+As a creative developer who loves 3D, I thought it would be cool to create a website that talks about three JS and resources I've found. I also want to link people's
+Twitters to who I think you should follow if you want to dive into three JS or 3D in general.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+This project is actually inspired by Huy Nguyen's pillarstack website! I thought it would be a cool opportunity to take what I've learned in three js journey and the 
+other front-end practice and try to make a single page website.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Check out Huy's work and Youtube Channel!
+Website: https://www.huyng.xyz/
+Youtube: https://www.youtube.com/channel/UCBOAB9RV647G93GxLhEXleA
 
-## 🚀 Project Structure
+While this site is being built, here's a few people I think you should follow on Twitter!
+Bruno Simon: @bruno_simon
+Anais Iris: @Anais_Iris_L
+Joshua Guo: @JoshGuoDesign
 
-Inside of your Astro project, you'll see the following folders and files:
+Here's some websites you should also check out as well.
+Three JS: https://threejs.org/
+Codrops: https://tympanus.net/codrops/all-articles/page/2/
+Lusion: https://lusion.co/
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Alternatives to 3JS are:
+Spline: https://spline.design/
+Dora: https://www.dora.run/
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
