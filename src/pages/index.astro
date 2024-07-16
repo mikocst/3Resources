@@ -8,14 +8,41 @@ import ThreeJSComponent from "../components/ThreeJSComponent.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 		<title>Three Resources</title>
+
+		<style>
+			body {
+				font-family: 'Rubik', sans-serif;
+			}
+
+			section {
+				width: 100dvw;
+				height: 10dvh;
+				display: flex;
+				justify-content: center;
+			}
+
+			.hero-wrapper {
+				text-align: center;
+			}
+		</style>
 	</head>
 	<body>
 		<main>
 			<section>
 				<ThreeJSComponent/>
 				<div class = "container">
-				<h1>A curation of resources for 3D enthusiasts.</h1>	
+					<div class = "hero-wrapper">
+						<h1>A curation of resources for 3D enthusiasts.</h1>
+				<p>
+					Kickstart your journey into 3D art and development with the list of resources <br/>
+					and people to be inspired by. Find some additional resources if you're a designer <br/>
+					breaking into the 3D space.
+				</p>
+					</div>	
 				</div>
 			</section>
 		</main>
