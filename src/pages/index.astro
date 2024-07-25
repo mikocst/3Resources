@@ -26,14 +26,23 @@ import Navbar from "../components/Navbar.astro";
 			}
 
 			section {
-				width: 100dvw;
-				height: 10dvh;
 				display: flex;
 				justify-content: center;
+				padding: 8rem 0 8rem 0;
+				height: 80dvh;
 			}
 
-			.hero-wrapper {
-				text-align: center;
+			p {
+				max-width: 65ch;
+			}
+
+			.container-hero {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				width: 90%;
+				padding-left: auto;
+				padding-right: auto;
 			}
 		</style>
 	</head>
@@ -42,16 +51,19 @@ import Navbar from "../components/Navbar.astro";
 			<Navbar/>
 			<section>
 				<ThreeJSComponent/>
-				<div class = "container">
+				<div class = "container-hero">
 					<div class = "hero-wrapper">
-						<h1>A curation of resources for 3D enthusiasts.</h1>
+						<h1>Curated Resources for 3D Design and Development</h1>
 				<p>
-					Kickstart your journey into 3D art and development with the list of resources <br/>
-					and people to be inspired by. Find some additional resources if you're a designer <br/>
-					breaking into the 3D space.
+					Embark on your exciting journey into the world of 3D art and development with a curated list
+					of resources and inspiring creatives. Discover even more tools and tips to elevate your skills! 
 				</p>
 					</div>	
 				</div>
+			</section>
+
+			<section>
+				<div></div>
 			</section>
 		</main>
 	</body>

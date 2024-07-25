@@ -5,10 +5,10 @@
 
 <style>
   #three-container {
-    width: 100%;
-    height: 100vh; /* Full viewport height */
+    width: 100dvw;
+    height: 100dvh; /* Full viewport height */
     display: block;
-    position: absolute;
+    position:absolute;
     z-index: -1;
   }
 </style>
@@ -35,6 +35,8 @@
     scene.add(cube);
 
     // Position the camera
+    camera.position.x = -2;
+    camera.position.y = -1;
     camera.position.z = 4;
 
     // Animation loop
