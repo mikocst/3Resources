@@ -13,5 +13,8 @@
     "astro": "^4.11.5",
     "three": "^0.166.1",
     "vite": "^5.3.3"
+  },
+  "devDependencies": {
+    "vite-plugin-glsl": "^1.3.0"
   }
 }

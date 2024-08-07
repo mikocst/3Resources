@@ -1,0 +1,68 @@
+---
+import Navbar from "../components/Navbar.astro";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+		<title>Three Resources</title>
+
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			body {
+				font-family: 'Rubik', sans-serif;
+				position: relative;
+			}
+
+			section {
+				display: flex;
+				justify-content: center;
+				padding: 8rem 0 8rem 0;
+				height: 80dvh;
+			}
+
+			p {
+				max-width: 65ch;
+			}
+
+			.container {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				width: 90%;
+				padding-left: auto;
+				padding-right: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<main>
+			<Navbar/>
+			<section>
+				<div class = "container-hero">
+					<div class = "container">
+						<h1>Curated Resources for 3D Design and Development</h1>
+				<p>
+					Embark on your exciting journey into the world of 3D art and development with a curated list
+					of resources and inspiring creatives. Discover even more tools and tips to elevate your skills! 
+				</p>
+					</div>	
+				</div>
+			</section>
+
+			<section>
+				<div></div>
+			</section>
+		</main>
+	</body>
+</html>
