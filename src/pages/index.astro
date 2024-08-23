@@ -1,7 +1,12 @@
 ---
 import ThreeJSComponent from "../components/ThreeJSComponent.astro";
+import { fetchResources } from "../lib/contentful";
+import ResourceCard from "../components/ResourceCard.astro";
 import Navbar from "../components/Navbar.astro";
-import '../global.css';
+import '../styles/global.css';
+
+const resource = await fetchResources();
+console.log(resource.image)
 ---
 
 <html lang="en">
@@ -24,6 +29,13 @@ import '../global.css';
 				padding-left: auto;
 				padding-right: auto;
 			}
+
+			.resource-grid {
+      			display: grid;
+      			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      			gap: 16px;
+      			padding: 16px;
+    }
 		</style>
 	</head>
 	<body>
@@ -43,7 +55,17 @@ import '../global.css';
 			</section>
 
 			<section>
-				<div></div>
+				<div class = "resource-grid">
+					{resource.map((resource) => (
+						<ResourceCard
+						  key={resource.id}
+						  title={resource.title}
+						  tag={resource.tag}
+						  description={resource.description}
+						  image={resource.image}
+						/>
+					  ))}
+				</div>
 			</section>
 		</main>
 	</body>
