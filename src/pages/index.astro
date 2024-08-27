@@ -6,7 +6,6 @@ import Navbar from "../components/Navbar.astro";
 import '../styles/global.css';
 
 const resource = await fetchResources();
-console.log(resource.image)
 ---
 
 <html lang="en">
@@ -26,16 +25,53 @@ console.log(resource.image)
 				justify-content: flex-start;
 				align-items: center;
 				width: 90%;
-				padding-left: auto;
-				padding-right: auto;
+			}
+
+			#resources {
+				height: auto;
+			}
+
+			.resource-wrapper {
+				background-color: #99C1F6;
+				padding: 16px;
 			}
 
 			.resource-grid {
       			display: grid;
-      			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+				width: 100%;
+				grid-template-columns: 2fr 2fr 2fr;
       			gap: 16px;
-      			padding: 16px;
-    }
+    		}
+
+			.sort-menu {
+				width: 10%;
+				background-color: rgb(208, 224, 238);
+				padding-top: 1rem;
+				padding-bottom: 1rem;
+			}
+
+			.sort-context {
+				position: sticky;
+				top: 30rem;
+			}
+
+			.sort-header {
+				font-size: 1.5rem;
+				font-weight: 500;
+				text-align: center;
+			}
+
+			.sort-btn-wrap {
+				display: flex;
+				flex-direction: column;
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+
+			.sort-btn-wrap * {
+				margin-top: 0.25rem;
+				margin-bottom: 0.25rem;
+			}
 		</style>
 	</head>
 	<body>
@@ -54,18 +90,36 @@ console.log(resource.image)
 				</div>
 			</section>
 
-			<section>
-				<div class = "resource-grid">
-					{resource.map((resource) => (
-						<ResourceCard
-						  key={resource.id}
-						  title={resource.title}
-						  tag={resource.tag}
-						  description={resource.description}
-						  image={resource.image}
-						/>
-					  ))}
+			<section id = resources>
+				<div class = "sort-menu">
+					<div class = "sort-context">
+					<p class = "sort-header">Sort By</p>
+					<div class = "sort-btn-wrap">
+					<button>All Resources</button>
+					<button>Tools</button>
+					<button>YT Channels</button>
+					<button>Twitters</button>
+					<button>Learning</button>
+					</div>
+					</div>
 				</div>
+				<div class = "resource-wrapper">
+					<h2>Welcome to the Library</h2>
+					<div class = "resource-grid">
+						{resource.map((resource) => (
+							<ResourceCard
+							  key={resource.id}
+							  title={resource.title}
+							  tag={resource.tag}
+							  description={resource.description}
+							  image={resource.image}
+							/>
+						  ))}
+				</div>
+			</section>
+
+			<section>
+				
 			</section>
 		</main>
 	</body>
