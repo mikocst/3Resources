@@ -3,6 +3,8 @@ import ThreeJSComponent from "../components/ThreeJSComponent.astro";
 import { fetchResources } from "../lib/contentful";
 import ResourceCard from "../components/ResourceCard.astro";
 import Navbar from "../components/Navbar.astro";
+import InspoCard from "../components/InspoCard.astro";
+import Footer from "../components/Footer.astro"
 import '../styles/global.css';
 
 const resource = await fetchResources();
@@ -20,6 +22,14 @@ const resource = await fetchResources();
 		<title>Three Resources</title>
 
 		<style>
+			.inspo-wrapper {
+				width: 100%;
+				height: auto;
+				display: grid;
+				grid-template-columns: 2fr 2fr 2fr;
+				gap: 1rem;
+			}
+
 			.container-hero {
 				display: flex;
 				justify-content: flex-start;
@@ -33,14 +43,14 @@ const resource = await fetchResources();
 
 			.resource-wrapper {
 				background-color: #99C1F6;
-				padding: 16px;
+				padding: 1rem;
 			}
 
 			.resource-grid {
       			display: grid;
 				width: 100%;
 				grid-template-columns: 2fr 2fr 2fr;
-      			gap: 16px;
+      			gap: 1rem;
     		}
 
 			.sort-menu {
@@ -71,6 +81,13 @@ const resource = await fetchResources();
 			.sort-btn-wrap * {
 				margin-top: 0.25rem;
 				margin-bottom: 0.25rem;
+			}
+
+			#inspiration {
+				height: auto;
+				padding: 0rem 8rem 8rem 8rem;
+				display: flex;
+				flex-direction: column;
 			}
 		</style>
 	</head>
@@ -118,9 +135,54 @@ const resource = await fetchResources();
 				</div>
 			</section>
 
-			<section>
-				
+			<section id = "inspiration">
+				<h2>Inspired by the Best People</h2>
+				<div class = "inspo-wrapper">
+					<InspoCard
+					title = "Huy Nguyen"
+					role = "Designer + Dev"
+					imgSrc = "/images/home/huy.png"
+					link = "https://www.byhuy.com/"
+					/>
+
+					<InspoCard
+					title = "Blrrd"
+					role = "Senior Web Dev"
+					imgSrc = "/images/home/milton.png"
+					link = "https://x.com/miltonisblurrd"
+					/>
+
+					<InspoCard
+					title = "Bruno Simon"
+					role = "Creative Dev"
+					imgSrc = "/images/home/bruno.png"
+					link = "https://bruno-simon.com/"
+					/>
+
+					<InspoCard
+					title = "Pillarstack"
+					role = "Website"
+					imgSrc = "/images/home/pillarstack.png"
+					link = "https://www.pillarstack.com/"
+					/>
+
+					<InspoCard
+					title = "Nine"
+					role = "Creative Dev"
+					imgSrc = "/images/home/nine.png"
+					link = "https://x.com/ninecodes_"
+					/>
+
+					<InspoCard
+					title = "Oliver Larose"
+					role = "Creative Dev"
+					imgSrc = "/images/home/oliver.png"
+					link = "https://blog.olivierlarose.com/"
+					/>
+				</div>
 			</section>
+
+			<Footer />
 		</main>
 	</body>
 </html>
