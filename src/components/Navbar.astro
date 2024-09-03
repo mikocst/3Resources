@@ -1,17 +1,187 @@
 ---
 ---
 
-<nav>
-    <a aria-label = "back to home">Home</a>
-    <div>
-        <a>About</a>
-        <button>Share Feedback</button>
+<div class = "header">
+    <div class = "header-container">
+        <a href="/">
+            <div>
+            <img src="/cloudthree.png">
+        </div>
+    </a>
+
+    <nav>
+        <div class = "el">
+            <img class = "nav-icon"src = "/Menu.png">
+        </div>
+
+        <div class = "menu">
+            <div class = "title">
+                <p>Navigation</p>
+            </div>
+            <a href = "/">
+                <div class = "menu-link">
+                    <p>Home</p>
+                </div>
+            </a>
+
+            <a href = "/">
+                <div class = "menu-link">
+                    <p>Submit Feedback</p>
+                </div>
+            </a>
+
+            <div class = "title">
+                <p>Socials</p>
+            </div>
+            <a href = "/">
+                <div class = "menu-link">
+                    <p>Twitter</p>
+                </div>
+            </a>
+
+            <a href = "/">
+                <div class = "menu-link">
+                    <p>Youtube</p>
+                </div>
+            </a>
+
+            <a href = "/">
+                <div class = "menu-link">
+                    <p>TikTok</p>
+                </div>
+            </a>
+
+            <a href = "/">
+                <div class = "menu-link">
+                    <p>Github</p>
+                </div>
+            </a>
+        </div>
+        </div>
+    </nav>
     </div>
-</nav>
+</div>
 
 <style>
-    nav {
+    .header {
+        width: 100%;
         position: sticky;
         top: 0%;
+        display: flex; 
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        z-index: 999;
+        border-bottom: 1px solid rgba(26, 26, 26, 0.2);
+        background-color: #eeeeee;
     }
-    </style>
+
+    .header-container {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav {
+        background-color: #ffffff;
+        border-radius: 10px;
+        position: relative;
+        transition: all 0.5s ease-out;
+    }
+
+    nav:hover {
+       border: 1px solid #4479e2;
+       box-shadow: 0 0 21px 0 #4479e2; 
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+        width: 100%;
+    }
+
+    .el {
+        width: 40px;
+        height: 35px; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: box-shadow 0.3s ease;
+    }
+
+    .nav-icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .menu {
+        position: absolute;
+        top: calc(100% + 30px);
+        left: calc(100% - 300px);
+        width: 250px;
+        background-color: azure;
+        border-radius: 20px;
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none; /* Prevent interaction when hidden */
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .title {
+        background-color:aliceblue;
+        font-size: 13px;
+        padding: 10px 10px 10px 25px;
+    }
+
+    .menu-link {
+        padding-left: 20px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        cursor: pointer;
+        transition: all .3s;
+    }
+
+    .menu-link p {
+        transition: all .3s;
+    }
+
+    .menu-link:hover {
+        background-color: aliceblue;
+    }
+
+    .menu-link:hover p {
+        transform: translateX(6px);
+    }
+
+    .title:first-of-type {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .menu.show {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+    
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menu = document.querySelector('.menu');
+    const el = document.querySelector('.el');
+
+    el.addEventListener('click', function() {
+        menu.classList.toggle('show');
+    });
+})
+
+
+</script>
