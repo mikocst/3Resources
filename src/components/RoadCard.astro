@@ -1,0 +1,15 @@
+---
+const {title, description, image, link} = Astro.props;
+---
+
+<a href = {link}>
+    <div class = "roadmap-card">
+        <div class = "image-wrapper">
+            <img src = {image}>
+        </div>
+        <div class = "ro-content">
+            {title}
+            {description}
+        </div>
+    </div>
+</a>

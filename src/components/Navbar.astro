@@ -4,8 +4,8 @@
 <div class = "header">
     <div class = "header-container">
         <a href="/">
-            <div>
-            <img src="/cloudthree.png">
+            <div class = "brand">
+            <img src="/cloudthree.png"><p>Cloud Three</p>
         </div>
     </a>
 
@@ -21,6 +21,12 @@
             <a href = "/">
                 <div class = "menu-link">
                     <p>Home</p>
+                </div>
+            </a>
+
+            <a href = "/about">
+                <div class = "menu-link">
+                    <p>About</p>
                 </div>
             </a>
 
@@ -87,6 +93,17 @@
         align-items: center;
     }
 
+    .brand {
+        display: flex;
+        align-items: center;
+        width: auto;
+        gap: 8px;
+    }
+
+    .brand > p {
+        font-weight: 500;
+    }
+
     nav {
         background-color: #ffffff;
         border-radius: 10px;
@@ -102,7 +119,7 @@
     a {
         text-decoration: none;
         color: black;
-        width: 100%;
+    
     }
 
     .el {
