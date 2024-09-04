@@ -1,47 +1,36 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import '../styles/global.css';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/cloudthree.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-		<title>Three Resources</title>
+		<title>About Cloud Three</title>
 
 		<style>
-			* {
-				padding: 0;
-				margin: 0;
-			}
-
-			body {
-				font-family: 'Rubik', sans-serif;
-				position: relative;
-			}
-
-			section {
+			.about-wrapper {
 				display: flex;
-				justify-content: center;
-				padding: 8rem 0 8rem 0;
-				height: 80dvh;
-			}
-
-			p {
-				max-width: 65ch;
-			}
-
-			.container {
-				display: flex;
-				justify-content: flex-start;
+				justify-content: space-between;
 				align-items: center;
-				width: 90%;
-				padding-left: auto;
-				padding-right: auto;
+			}
+
+			.about-text-wrapper {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+			}
+
+			.text-wrapper {
+				display: flex;
+				flex-direction: column;
 			}
 		</style>
 	</head>
@@ -49,20 +38,64 @@ import Navbar from "../components/Navbar.astro";
 		<main>
 			<Navbar/>
 			<section>
-				<div class = "container-hero">
-					<div class = "container">
-						<h1>Curated Resources for 3D Design and Development</h1>
-				<p>
-					Embark on your exciting journey into the world of 3D art and development with a curated list
-					of resources and inspiring creatives. Discover even more tools and tips to elevate your skills! 
-				</p>
+				<div class = "container">
+					<div class = "about-wrapper">
+						<h1>About CloudThree</h1>
+						<div class = "about-text-wrapper">
+							<p>
+								CloudThree is a resource library dedicated to 3D Design/Dev designed and built by <a>Miko Castillo</a>. 
+								A problem I was having early on in my journey was finding resources dedicated to 3D Design and development. Everything was scattered and all over the place that I ended up saving a lot of links into a folder in my bookmarks bar.
+							</p>
+
+							<p>
+								Being inspired by <a href="https://www.byhuy.com/" target="_blank">Huy Nguyen’s</a> design and front-end resource website, <a href="https://www.pillarstack.com/" target="_blank">Pillarstack</a>, I wanted to solve the problem of 3D resources being scattered around the web.
+								This library was put together from my exploration in the 3D space and curiosity of knowing the options for anything related to 3D Design and development.	
+							</p>
+						</div>
 					</div>	
 				</div>
 			</section>
 
 			<section>
-				<div></div>
+				<div class = "container">
+					<div class = "text-wrapper">
+						<h2>My Advice for Those Starting Out</h2>
+						<p>I would research what you’d want to do in the 3D space. Let’s start broad and think about it. Do you want to design, develop, or both? The world is your oyster. Here’s a few simple roadmaps that you can try to follow. These roadmaps are a starting point that you can copy and edit to best fit your needs.</p>
+					</div>
+
+					<div class = "road-c-wrapper">
+
+					</div>
+				</div>
 			</section>
+
+			<section>
+				<div class = "container">
+					<div class = "text-wrapper">
+						<h2>Digging Deeper</h2>
+						<p>Once you have a basic understanding of what you enjoy doing, it’s time to dig deeper and perfect your craft. You can dive into a niche and specialize in a specific aspect of 3D or you can look at job postings that involve 3D and polish your skills based on those roles.  </p>
+					</div>
+
+					<div class = "road-c-wrapper">
+						
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class = "container">
+					<div class = "text-wrapper">
+						<h2>Digging Deeper</h2>
+						<p>Once you have a basic understanding of what you enjoy doing, it’s time to dig deeper and perfect your craft. You can dive into a niche and specialize in a specific aspect of 3D or you can look at job postings that involve 3D and polish your skills based on those roles.  </p>
+					</div>
+
+					<div class = "road-c-wrapper">
+						
+					</div>
+				</div>
+			</section>
+
+			<Footer />
 		</main>
 	</body>
 </html>
