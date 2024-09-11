@@ -44,12 +44,14 @@ const resource = await fetchResources();
 			.resource-wrapper {
 				background-color: #99C1F6;
 				padding: 1rem;
+				width: 100%;
 			}
 
 			.resource-grid {
       			display: grid;
 				width: 100%;
-				grid-template-columns: 2fr 2fr 2fr;
+				grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+				grid-auto-flow: dense;
       			gap: 1rem;
     		}
 
@@ -90,6 +92,30 @@ const resource = await fetchResources();
 				flex-direction: column;
 			}
 		</style>
+
+<script type="module" defer>
+    const buttons = document.querySelectorAll('.sort-btn-wrap button');
+    const cards = document.querySelectorAll('.card');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            cards.forEach(card => {
+                const cardTag = card.getAttribute('data-tag');
+
+                
+                if (filter === 'all' || cardTag === filter) {
+                    card.style.display = 'block';
+		
+                } else {
+                    card.style.display = 'none';
+				  
+                }
+            });
+        });
+    });
+</script>
 	</head>
 	<body>
 		<main>
@@ -112,17 +138,17 @@ const resource = await fetchResources();
 					<div class = "sort-context">
 					<p class = "sort-header">Sort By</p>
 					<div class = "sort-btn-wrap">
-					<button>All Resources</button>
-					<button>Tools</button>
-					<button>YT Channels</button>
-					<button>Twitters</button>
-					<button>Learning</button>
-					</div>
+					<button data-filter = "all">All Resources</button>
+					<button data-filter = "Tool">Tools</button>
+					<button data-filter = "Youtube">Youtube</button>
+					<button data-filter = "Twitter">Twitters</button>
+					<button data-filter = "Learning">Learning</button>
+						</div>
 					</div>
 				</div>
 				<div class = "resource-wrapper">
 					<h2>Welcome to the Library</h2>
-					<div class = "resource-grid">
+					<div class = "resource-grid" id = "resource-grid">
 						{resource.map((resource) => (
 							<ResourceCard
 							  key={resource.id}
@@ -130,6 +156,7 @@ const resource = await fetchResources();
 							  tag={resource.tag}
 							  description={resource.description}
 							  image={resource.image}
+							  link = {resource.link}
 							/>
 						  ))}
 				</div>

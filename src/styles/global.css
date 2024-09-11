@@ -9,11 +9,16 @@ body {
 }
 
 h1 {
-    font-size: 44px;
+    font-size: 2.75rem;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 2.5rem;
+    margin-bottom: .5rem;
+}
+
+h3 {
+    font-size: 2rem;
     margin-bottom: .5rem;
 }
 

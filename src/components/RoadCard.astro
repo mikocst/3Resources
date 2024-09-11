@@ -2,14 +2,46 @@
 const {title, description, image, link} = Astro.props;
 ---
 
-<a href = {link}>
+<style>
+    a {
+        text-decoration: none;
+        color: #242424;
+    }
+
+    .roadmap-card {
+        height: auto;
+        border-radius: 20px;
+        border: #242424 2px solid;
+        padding: 1rem;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: transform 0.2s;
+    }
+
+    .ro-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .road-img {
+        height: 24rem;
+        width: 100%;
+        border-radius: 1rem;
+    }
+
+    .roadmap-card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+
+<a href = {link} target="_blank">
     <div class = "roadmap-card">
         <div class = "image-wrapper">
-            <img src = {image}>
+            <img class = "road-img" src = {image}>
         </div>
         <div class = "ro-content">
-            {title}
-            {description}
+            <h3>{title}</h3>
+            <p>{description}</p>
         </div>
     </div>
 </a>

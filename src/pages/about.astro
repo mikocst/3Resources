@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
+import RoadCard from "../components/RoadCard.astro";
 import '../styles/global.css';
 ---
 
@@ -32,6 +33,20 @@ import '../styles/global.css';
 				display: flex;
 				flex-direction: column;
 			}
+
+			#card-section {
+				height: auto;
+			}
+
+			.text-wrapper {
+				margin-bottom: 1.5rem;
+			}
+
+			.road-c-wrapper {
+				display: grid;
+				grid-template-columns: auto auto;
+				gap: 1rem;
+			}
 		</style>
 	</head>
 	<body>
@@ -56,7 +71,7 @@ import '../styles/global.css';
 				</div>
 			</section>
 
-			<section>
+			<section id = "card-section">
 				<div class = "container">
 					<div class = "text-wrapper">
 						<h2>My Advice for Those Starting Out</h2>
@@ -64,34 +79,31 @@ import '../styles/global.css';
 					</div>
 
 					<div class = "road-c-wrapper">
-
+						<RoadCard
+						title = "3D Design Roadmap"
+						description = "Surface level roadmap for a beginner diving into their 3D Design journey."
+						image = "/images/about/neon-cityscape.jpeg"
+						link = "https://roadmap.sh/r/3d-designer-roadmap"
+						/>
+						<RoadCard
+						title = "3D Design Roadmap"
+						description = "Surface level roadmap for a beginner diving into their 3D Design journey."
+						image = "/images/about/char-wireframe.jpeg"
+						link = "https://roadmap.sh/r/3d-development"
+						/>
 					</div>
 				</div>
 			</section>
 
 			<section>
 				<div class = "container">
-					<div class = "text-wrapper">
-						<h2>Digging Deeper</h2>
-						<p>Once you have a basic understanding of what you enjoy doing, it’s time to dig deeper and perfect your craft. You can dive into a niche and specialize in a specific aspect of 3D or you can look at job postings that involve 3D and polish your skills based on those roles.  </p>
-					</div>
 
-					<div class = "road-c-wrapper">
-						
-					</div>
 				</div>
 			</section>
 
 			<section>
 				<div class = "container">
-					<div class = "text-wrapper">
-						<h2>Digging Deeper</h2>
-						<p>Once you have a basic understanding of what you enjoy doing, it’s time to dig deeper and perfect your craft. You can dive into a niche and specialize in a specific aspect of 3D or you can look at job postings that involve 3D and polish your skills based on those roles.  </p>
-					</div>
-
-					<div class = "road-c-wrapper">
-						
-					</div>
+					
 				</div>
 			</section>
 
