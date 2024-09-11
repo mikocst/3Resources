@@ -4,19 +4,29 @@ export interface Props {
     tag: string;
     description: string;
     image: string;
+    link: string;
 }
 
-const { title, tag, description, image } = Astro.props;
+const { title, tag, description, image, link } = Astro.props;
 ---
 <style>
+    a {
+        text-decoration: none;
+        color: #242424;
+    }
+
     .card {
         height: auto;
+        width: 100%;
+        padding: 0;
+        margin: 0;
         border: 2px solid #242424;
         background-color: #F1F1F1;
         border-radius: 20px;
         overflow: hidden;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s;
+        transition: opacity 0.3s ease, visibility 0.3s ease, height 0.3s ease, transform 0.3s ease;
+        cursor: pointer;
     }
     
     .card-img-wrap {
@@ -61,23 +71,27 @@ const { title, tag, description, image } = Astro.props;
 
 
 
-<div class = "card">
-    <div class = "card-content-wrap">
-        <div class = "card-img-wrap">
-            <img src={image} alt={title}>
-        </div>
-
-        <div class = "card-txt-wrap">
-            <div class = "card-head-wrap">
-            <h3>{title}</h3>
-
-                <div class = "tag">
-                    <p>{tag}</p>
+    <div class = "card" data-tag = {tag}>
+        <a href = {link} target="_blank">
+            <div class = "card-content-wrap">
+                <div class = "card-img-wrap">
+                    <img src={image} alt={title}>
+                </div>
+        
+                <div class = "card-txt-wrap">
+                    <div class = "card-head-wrap">
+                    <h3>{title}</h3>
+        
+                        <div class = "tag">
+                            <p>{tag}</p>
+                        </div>
+                    </div>
+                    <p class = "description">{description}</p>
                 </div>
             </div>
-            <p class = "description">{description}</p>
-        </div>
-    </div>
-</div>
+        </div>  
+        </a>
+
+
 
 

@@ -18,7 +18,8 @@ export async function fetchResources() {
             title: entry.fields.resourceName,
             tag: entry.fields.tagline,
             description: entry.fields.description,
-            image: image, // Pass the URL string
+            image: image,
+            link: entry.fields.link, // Pass the URL string
         };
     });
 }
