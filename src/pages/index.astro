@@ -85,6 +85,11 @@ const resource = await fetchResources();
 				margin-bottom: 0.25rem;
 			}
 
+			.color {
+				background-color: rgb(53, 55, 179);
+				color:azure;
+			}
+
 			#inspiration {
 				height: auto;
 				padding: 0rem 8rem 8rem 8rem;
@@ -97,9 +102,19 @@ const resource = await fetchResources();
     const buttons = document.querySelectorAll('.sort-btn-wrap button');
     const cards = document.querySelectorAll('.card');
 
+	let activeButton = null;
+
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const filter = button.getAttribute('data-filter');
+
+			if (activeButton) {
+				activeButton.classList.remove('color');
+			}
+
+			button.classList.add('color');
+
+			activeButton = button;
 
             cards.forEach(card => {
                 const cardTag = card.getAttribute('data-tag');
@@ -109,12 +124,13 @@ const resource = await fetchResources();
                     card.style.display = 'block';
 		
                 } else {
-                    card.style.display = 'none';
-				  
+                    card.style.display = 'none';	
                 }
             });
         });
     });
+
+
 </script>
 	</head>
 	<body>
@@ -138,11 +154,11 @@ const resource = await fetchResources();
 					<div class = "sort-context">
 					<p class = "sort-header">Sort By</p>
 					<div class = "sort-btn-wrap">
-					<button data-filter = "all">All Resources</button>
-					<button data-filter = "Tool">Tools</button>
-					<button data-filter = "Youtube">Youtube</button>
-					<button data-filter = "Twitter">Twitters</button>
-					<button data-filter = "Learning">Learning</button>
+					<button id = "all" data-filter = "all">All Resources</button>
+					<button id = "tools" data-filter = "Tool">Tools</button>
+					<button id = "youtube" data-filter = "Youtube">Youtube</button>
+					<button id = "twitter" data-filter = "Twitter">Twitters</button>
+					<button id = "learning" data-filter = "Learning">Learning</button>
 						</div>
 					</div>
 				</div>

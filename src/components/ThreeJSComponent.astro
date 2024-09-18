@@ -25,7 +25,8 @@
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({
-        alpha: true
+        alpha: true,
+        antialias: true
     });
     renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
@@ -36,11 +37,11 @@
       vertexShader,
       fragmentShader,
       uniforms: {
-        uTime: {value: 0.1},
+        uTime: {value: 0.4},
       }
     });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+    const sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
 
     // Position the camera
     camera.position.x = -2;
@@ -51,7 +52,9 @@
     const animate = function () {
       requestAnimationFrame(animate);
 
-      cube.rotation.x += 0.005;
+      material.uniforms.uTime.value += 0.01;
+      sphere.rotation.x = -7;
+      sphere.rotation.z = -3;
 
       renderer.render(scene, camera);
     };
