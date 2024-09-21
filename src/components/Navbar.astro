@@ -144,16 +144,18 @@
         top: calc(100% + 30px);
         left: calc(100% - 300px);
         width: 250px;
-        background-color: azure;
-        border-radius: 20px;
+        background-color: #eaf0f8;
+        border-radius: 20px 20px 0 0;
         opacity: 0;
         transform: translateY(-10px);
         pointer-events: none; /* Prevent interaction when hidden */
-        transition: opacity 0.3s ease, transform 0.3s ease;
+        transition: opacity 0.1s ease, transform 0.2s ease;
+        box-shadow: 0 0 21px 0 #4479e2; 
+        border: 1.5px solid #4479e2;
     }
 
     .title {
-        background-color:aliceblue;
+        background-color:#99C1F6;
         font-size: 13px;
         padding: 10px 10px 10px 25px;
     }
@@ -167,11 +169,12 @@
     }
 
     .menu-link p {
-        transition: all .3s;
+        transition: all 100ms;
     }
 
     .menu-link:hover {
-        background-color: aliceblue;
+        background-color: #3b6cac;
+        color: white;
     }
 
     .menu-link:hover p {
