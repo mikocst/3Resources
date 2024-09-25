@@ -5,8 +5,8 @@
 
 <style>
   #three-container {
-    width: 100dvw;
-    height: 100dvh; /* Full viewport height */
+    width: 100%;
+    height: 30rem; /* Full viewport height */
     display: block;
     position:absolute;
     z-index: -1;
@@ -44,16 +44,16 @@
     scene.add(sphere);
 
     // Position the camera
-    camera.position.x = -3;
-    camera.position.y = -2;
-    camera.position.z = 5;
+    camera.position.x = -5;
+    camera.position.y = -0.6;
+    camera.position.z = 3.5;
 
     // Animation loop
     const animate = function () {
       requestAnimationFrame(animate);
 
       material.uniforms.uTime.value += 0.01;
-      sphere.rotation.x = -7.2;
+      sphere.rotation.x = -6;
       
 
       renderer.render(scene, camera);
@@ -66,6 +66,18 @@
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
+
+      if (window.innerWidth < 640) {
+        camera.position.set(0,2.5,6);
+      }
+
+      else if (window.innerWidth < 1165) {
+        camera.position.set(0,0.5,5)
+      }
+
+      else {
+        camera.position.set(-3,-0.5,3.5);
+      }
     });
   });
 </script>

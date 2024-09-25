@@ -48,6 +48,21 @@ import '../styles/global.css';
 				grid-template-columns: auto auto;
 				gap: 1rem;
 			}
+
+			#aThreeScene {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.text-wrap-1 {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+			}
 		</style>
 	</head>
 	<body>
@@ -97,17 +112,33 @@ import '../styles/global.css';
 			</section>
 
 			<section>
-				<AboutThreeScene />
-				<div class = "container">
+				<div id = "aThreeScene" class = "container">
 					<h2>Digging Deeper</h2>
 					<p>Once you have a basic understanding of what you enjoy doing, it’s time to dig deeper and perfect your craft. You can dive into a niche and specialize in a specific aspect of 3D or you can look at job postings that involve 3D and polish your skills based on those roles.  </p>
-					
+					<AboutThreeScene />
 				</div>
 			</section>
 
 			<section>
-				<div class = "container">
-					
+				<div id = "text-container" class = "container">
+					<div class = "text-wrap-1">
+						<h2>
+							Legal Info				
+						</h2>
+
+						<p>All logos and pictures belong to the respective companies and individuals. No personal information is collected. Google Analytics is used on this site to gather the metrics regarding traffic and usage. This data is gathered to provide a better user experience.</p>
+					</div>
+
+					<div class = "text-wrap-1">
+					<h2>Have Any Questions?</h2>
+					<div class = "body-text-wrap">
+						<p>Feel free to hit me up on my socials for any additional questions or give some feedback to the site. Thanks for checking out the CloudThree!</p>
+						<div class = "social-link">
+							<p>Social 1</p>
+						</div>
+					</div>	
+
+					</div>
 				</div>
 			</section>
 

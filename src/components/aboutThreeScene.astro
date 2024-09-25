@@ -5,11 +5,12 @@
 
 <style>
   #three-container {
-    width: 100dvw;
-    height: 100dvh; /* Full viewport height */
-    display: block;
-    position:absolute;
-    z-index: -1;
+    width: 100%;
+  height: 20rem;
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 60%;
   }
 </style>
 
@@ -20,6 +21,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('three-container');
+    console.log('ThreeJSComponent loaded');
     
     // Set up the scene, camera, and renderer
     const scene = new THREE.Scene();
@@ -37,7 +39,7 @@
       vertexShader,
       fragmentShader,
       uniforms: {
-        uTime: {value: 0.4},
+        uTime: {value: 0.8},
       }
     });
     const shape = new THREE.Mesh(geometry, material);
@@ -45,8 +47,8 @@
 
     // Position the camera
     camera.position.x = 0;
-    camera.position.y = 0.5;
-    camera.position.z = 3;
+    camera.position.y = 0.4;
+    camera.position.z = 2;
 
     // Animation loop
     const animate = function () {
@@ -62,9 +64,19 @@
 
     // Handle window resize
     window.addEventListener('resize', () => {
+      console.log("Resize event fired");
       camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
+
+      console.log(`Window width: ${window.innerWidth}, height: ${window.innerHeight}`);
+      if (window.innerWidth < 900) {
+        camera.position.set(-10,10,10);
+      }
+
+      else {
+        camera.position.set(0,0.4,2)
+      }
     });
   });
 </script>

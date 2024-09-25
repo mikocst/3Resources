@@ -1,0 +1,77 @@
+---
+---
+<div class = "sortM-wrapper">
+    <button class = "sort-el">
+        Sort By
+        </button>
+
+    <div>
+        <div class = "sortM-btn-wrap">
+            <button class = "color" id = "all" data-filter = "all">All Resources</button>
+            <button id = "tools" data-filter = "Tool">Tools</button>
+            <button id = "youtube" data-filter = "Youtube">Youtube</button>
+            <button id = "twitter" data-filter = "Twitter">Twitters</button>
+            <button id = "learning" data-filter = "Learning">Learning</button>
+    </div>
+</div>
+
+
+<style>
+.sortM-wrapper {
+    position: sticky;
+    bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sort-el {
+    margin-top: 0.5rem;
+	margin-bottom: 0.25rem;
+    padding: .8rem 1.5rem .8rem 1.5rem;
+	font-weight: 600;
+	border-radius: .8rem;
+	border-style: none;
+    background-color: rgb(26, 26, 27);
+	color:rgb(255, 255, 255);
+}
+
+.sortM-btn-wrap {
+    display: flex;
+    opacity: 0;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0.7rem 1rem 0.7rem;
+    background-color: aqua;
+    border-radius: 20px;;
+    position: absolute;
+    bottom: 100%;
+    left: 44%;
+    transform: translateY(2rem);
+    pointer-events: none;
+    transition: opacity 0.075s ease-out, transform 0.1s ease;
+}
+
+.sortM-btn-wrap.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+@media (width > 1200px) {
+    .sortM-wrapper {
+        display: none;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sortEl = document.querySelector('.sort-el');
+    const sortMBtnWrap = document.querySelector('.sortM-btn-wrap');
+
+    sortEl.addEventListener('click', function(){
+        sortMBtnWrap.classList.toggle('show');
+    })
+})
+</script>
