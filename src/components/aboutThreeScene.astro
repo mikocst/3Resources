@@ -6,7 +6,7 @@
 <style>
   #three-container {
     width: 100%;
-  height: 20rem;
+  height: 15rem;
   display: block;
   position: absolute;
   z-index: -1;
@@ -70,13 +70,7 @@
       renderer.setSize(container.clientWidth, container.clientHeight);
 
       console.log(`Window width: ${window.innerWidth}, height: ${window.innerHeight}`);
-      if (window.innerWidth < 900) {
-        camera.position.set(-10,10,10);
-      }
-
-      else {
-        camera.position.set(0,0.4,2)
-      }
+      
     });
   });
 </script>

@@ -49,6 +49,11 @@ import '../styles/global.css';
 				gap: 1rem;
 			}
 
+			#three-wrap {
+				position: relative;
+				height: 50dvh;
+			}
+
 			#aThreeScene {
 				display: flex;
 				flex-direction: column;
@@ -62,6 +67,27 @@ import '../styles/global.css';
 				align-items: center;
 				margin-top: 2rem;
 				margin-bottom: 2rem;
+			}
+
+			@media (max-width: 1280px) {
+				.about-wrapper {
+					display: flex;
+					flex-direction: column;
+					align-items: start;
+				}
+
+				.road-c-wrapper {
+					grid-template-columns: auto;
+				}
+
+				#aThreeScene {
+				align-items: start;
+			}
+
+				.text-wrap-1 {
+					flex-direction: column;
+					align-items: start;
+				}
 			}
 		</style>
 	</head>
@@ -111,7 +137,7 @@ import '../styles/global.css';
 				</div>
 			</section>
 
-			<section>
+			<section id = "three-wrap">
 				<div id = "aThreeScene" class = "container">
 					<h2>Digging Deeper</h2>
 					<p>Once you have a basic understanding of what you enjoy doing, it’s time to dig deeper and perfect your craft. You can dive into a niche and specialize in a specific aspect of 3D or you can look at job postings that involve 3D and polish your skills based on those roles.  </p>
