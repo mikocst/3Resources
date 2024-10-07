@@ -66,6 +66,11 @@
     transform: translateY(0);
 }
 
+.color {
+				background-color: rgb(26, 26, 27);
+				color:rgb(255, 255, 255);	
+			}
+
 @media (width > 1200px) {
     .sortM-wrapper {
         display: none;
@@ -75,11 +80,57 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    //initialization pt 1
     const sortEl = document.querySelector('.sort-el');
     const sortMBtnWrap = document.querySelector('.sortM-btn-wrap');
 
+    //adding event listener to sortEl to show the sortMBtnWrap when clicked
     sortEl.addEventListener('click', function(){
+        //adds CSS class 
         sortMBtnWrap.classList.toggle('show');
     })
+
+    //initialization pt 2
+    const sortButtons = document.querySelectorAll('.sortM-btn-wrap button');
+    const cards = document.querySelectorAll('.card');
+
+    //initialization of activeButton state
+    let activeButton = sortButtons[0];
+    activeButton.classList.add('color')
+
+    //setting up event listener for each button
+    sortButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            //recording data-filter attribute of each button for cards
+            const filter = button.getAttribute('data-filter');
+
+            //removes class from default active button
+			if (activeButton) {
+				activeButton.classList.remove('color');
+			}
+
+            //gives active button css properties
+			button.classList.add('color');
+
+            //resets activeButton to be the button clicked
+			activeButton = button;
+
+            //function for getting attribute of cards
+            cards.forEach(card => {
+                const cardTag = card.getAttribute('data-tag');
+
+                //cards will display if filter matches either all or cardTag
+                if (filter === 'all' || cardTag === filter) {
+                    card.style.display = 'block';
+                  
+                    //otherwise, display none 
+                } else {
+                    card.style.display = 'none';	
+                }
+               
+            });
+        })
+    })
+
 })
 </script>
