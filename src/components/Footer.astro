@@ -21,10 +21,12 @@
 
  .footer-content-wrapper {
     display: flex;
+    position: relative;
     flex-direction: row;
     justify-content: space-between;
     margin-left: 6.25rem;
     margin-right: 6.25rem;
+    z-index:2;
  }
 
  .footer-left-content > p {
@@ -38,6 +40,10 @@
    font-size: 1.5rem;
  }
 
+ .footer-right-content a {
+   pointer-events: pointer;
+ }
+
  .footer-logo-wrapper{
     width: 100%;
     display: flex;
@@ -46,11 +52,114 @@
     flex-direction: row;
     position: absolute;
     top: 30%;
+    z-index: 1;
  }
 
  .footer-logo-wrapper > p {
    font-size: 10rem;
  }
+
+ @media (max-width: 1160px) {
+   .footer-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .footer-logo-wrapper {
+    top: 45%;
+  }
+
+   .footer-logo-wrapper > p {
+      font-size: 5rem;
+  }
+
+  .footer-logo-wrapper > img {
+      width: 30%;
+  }
+}
+
+@media (max-width: 815px) {
+   .footer-content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   .footer-logo-wrapper {
+    top: 50%;
+  }
+
+   .footer-logo-wrapper > p {
+      font-size: 5rem;
+  }
+
+  .footer-logo-wrapper > img {
+      width: 30%;
+  }
+}
+
+@media (max-width: 640px){
+  .footer-content-wrapper {
+    text-align: center;
+  }
+
+  .footer-logo-wrapper {
+    top: 65%;
+  }
+
+  .footer-logo-wrapper > p {
+      font-size: 4rem;
+  }
+
+  .footer-logo-wrapper > img {
+    width: 30%;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-right-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #footer {
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .footer-logo-wrapper {
+    top: 80%;
+  }
+
+  .footer-logo-wrapper > p {
+      font-size: 3.5rem;
+  }
+
+  .footer-logo-wrapper > img {
+    width: 30%;
+  }
+}
+
+
+@media (max-width: 390px){
+  .footer-content-wrapper {
+    text-align: center;
+  }
+
+  .footer-logo-wrapper {
+    top: 89%;
+  }
+
+  .footer-logo-wrapper > p {
+      font-size: 2rem;
+  }
+
+  .footer-logo-wrapper > img {
+    width: 25%;
+  }
+}
 </style>
 
 <div id = "footer">

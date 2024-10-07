@@ -6,26 +6,28 @@
 body {
     font-family: 'Rubik', sans-serif;
     position: relative;
+    font-size: calc(1rem + 0.390625vw);
 }
 
 h1 {
-    font-size: 2.75rem;
+    /* font-size: 3.5rem; */
+    font-size: clamp(2.5rem, 5vw + 1rem, 3.5rem);
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2rem, 4vw + 1rem, 3rem);
     margin-bottom: .5rem;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
     margin-bottom: .5rem;
 }
 
 section {
     display: flex;
     justify-content: center;
-    padding: 8rem 0 8rem 0;
+    margin: 8rem 0 8rem 0;
     height: 30dvh;
 }
 
