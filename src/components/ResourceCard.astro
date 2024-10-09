@@ -79,6 +79,16 @@ const { title, tag, description, image, link } = Astro.props;
     .card:hover {
         transform: translateY(-5px);
     }
+
+    @media (max-width: 330px) {
+        .card {
+            width: 80%;
+        }
+
+        .card-content-wrap {
+        padding: .5rem;
+    }
+    }
     </style>
 
 
