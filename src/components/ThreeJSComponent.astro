@@ -101,7 +101,11 @@
       camera.updateProjectionMatrix();
       renderer.setSize(container.clientWidth, container.clientHeight);
 
-      if (window.innerWidth < 640) {
+      if (window.innerWidth < 320) {
+        camera.position.set(0,2.6,7);
+      }
+
+      else if (window.innerWidth < 640) {
         camera.position.set(0,2.6,6);
       }
 
