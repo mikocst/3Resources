@@ -159,36 +159,47 @@ const resource = await fetchResources();
 		</style>
 
 <script type="module" defer>
-    const buttons = document.querySelectorAll('.sort-btn-wrap button');
-    const cards = document.querySelectorAll('.card');
+const buttons = document.querySelectorAll('.sort-btn-wrap button');
+const cards = document.querySelectorAll('.card');
+let activeButton = buttons[0];
+let container = document.querySelector('.resource-wrapper'); 
 
-	let activeButton = buttons[0];
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
 
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            const filter = button.getAttribute('data-filter');
+       
+        if (activeButton) {
+            activeButton.classList.remove('color');
+        }
+        button.classList.add('color');
+        activeButton = button;
 
-			if (activeButton) {
-				activeButton.classList.remove('color');
-			}
+        // Store the current scroll position
+        let previousScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-			button.classList.add('color');
+        
+        cards.forEach(card => {
+            const cardTag = card.getAttribute('data-tag');
 
-			activeButton = button;
-
-            cards.forEach(card => {
-                const cardTag = card.getAttribute('data-tag');
-
-                
-                if (filter === 'all' || cardTag === filter) {
-                    card.style.display = 'block';
-		
-                } else {
-                    card.style.display = 'none';	
-                }
-            });
+            if (filter === 'all' || cardTag === filter) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
         });
+
+       
+        let newSectionHeight = container.offsetHeight;
+
+        if (previousScrollTop > newSectionHeight) {
+            window.scrollTo({
+                top: newSectionHeight - window.innerHeight,
+                behavior: 'smooth' 
+            });
+        }
     });
+});
 
 
 </script>
